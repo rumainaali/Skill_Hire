@@ -14,4 +14,5 @@
 ![image](https://github.com/user-attachments/assets/959628af-4c8a-4c92-9601-b175e08e63de)
 
 #### Dashboard - Find Job(when save icon clicked)
-![image](https://github.com/user-attachments/assets/d07da785-7853-4f2c-ad5c-89d82b15afb1)
+![image](https://github.com/user-attachments/assets/c9ba9cdc-285b-4fc0-bf4a-f0b72cd114e9)
+
