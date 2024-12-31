@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skill Hire - Job Portal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    .logo {
+      font-family: 'Poppins', sans-serif;
+      font-size: 20px;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    .search-container{
+        justify-content:center;
+        align-items: center;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #333;
+      color: white;
+      padding: 10px 20px;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      padding: 5px 10px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .nav-links a:hover {
+      background-color: #555;
+      color: #fff;
+      border-radius: 5px;
+    }
+
+    .nav-links a.active {
+      background-color: #007bff;
+      color: white;
+    }
+
+    .language-dropdown {
+      background-color: white;
+      color: #333;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 5px 10px;
+      font-size: 1em;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 50px 20px;
+      background-color: #fff;
+    }
+
+    .hero h1 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .search-input {
+      padding: 10px;
+      width: 300px;
+      margin-right: 10px;
+      border: 1px solid #ccc;
+    }
+
+    .search-btn {
+      padding: 10px 20px;
+      background: #007bff;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .search-btn:hover {
+      background: #0056b3;
+    }
+
+    .job-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .job-card {
+      background: white;
+      border: 1px solid #ccc;
+      padding: 15px;
+      width: 300px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      position: relative;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .job-card img {
+      width: 60px;
+      height: 60px;
+      object-fit: cover; /* Ensure the image fits within the 60x60 box */
+    }
+
+    .job-card h3 {
+      margin: 0;
+    }
+
+    .job-card p {
+      margin: 5px 0;
+      color: #555;
+    }
+
+    .save-icon {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      cursor: pointer;
+      font-size: 1.5em;
+      color: #007bff;
+    }
+
+    .save-icon:hover {
+      color: #0056b3;
+    }
+
+    .footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    .footer a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+
+    #search-bar {
+      display: none;
+      margin-top: 20px; /* Add margin to position it below the quote */
+    }
+
+    #search-btn {
+      display: none; /* Initially hide the Find Job button */
+    }
+
+    .find-jobs-active #search-bar {
+      display: block; /* Show the search bar when Find Jobs is active */
+    }
+
+    .find-jobs-active #search-btn {
+      display: inline-block; /* Show the Find Job button next to the search bar */
+    }
+
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="logo">Skill Hire</div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#home" class="active" id="home-nav">Home</a></li>
+        <li><a href="#jobs" id="find-jobs-nav">Find Jobs</a></li>
+        <li><a href="#employers">Find Employers</a></li>
+        <li><a href="#alerts">Job Alerts</a></li>
+        <li><a href="#saved">Saved Jobs</a></li>
+      </ul>
+    </nav>
+    <div>
+      <select class="language-dropdown" id="language-selector">
+        <option value="en">English</option>
+        <option value="ta">Tamil</option>
+        <option value="ur">Urdu</option>
+        <option value="hi">Hindi</option>
+      </select>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h1>Your Success Story Starts Here!</h1>
+    <p>Search and apply for your dream job today.</p>
+    <div id="search-container">
+      <input type="text" placeholder="Job title, Position, Keyword..." class="search-input" id="search-bar">
+      <button class="search-btn" id="search-btn">Find Job</button>
+    </div>
+  </section>
+
+  <section id="jobs" class="job-list">
+    <div class="job-card" data-title="Software Engineer" data-type="Full-Time">
+      <img src="background_image2.jpg" alt="Amazon">
+      <div>
+        <h3>Software Engineer</h3>
+        <p>Amazon</p>
+        <p>Full-Time, Hyderabad, India</p>
+        <p>Salary: $40,000 - $45,000</p>
+      </div>
+      <span class="save-icon" onclick="saveJob('Software Engineer')">💾</span>
+    </div>
+    <div class="job-card" data-title="Project Manager" data-type="Full-Time">
+      <img src="background_image.png" alt="Google">
+      <div>
+        <h3>Project Manager</h3>
+        <p>Google Inc.</p>
+        <p>Full-Time, Dhaka, Bangladesh</p>
+        <p>Salary: $20,000 - $25,000</p>
+      </div>
+      <span class="save-icon" onclick="saveJob('Project Manager')">💾</span>
+    </div>
+    <div class="job-card" data-title="Product Designer" data-type="Part-Time">
+      <img src="background_image1.jpg" alt="Apple">
+      <div>
+        <h3>Product Designer</h3>
+        <p>Apple Inc.</p>
+        <p>Part-Time, San Francisco, USA</p>
+        <p>Salary: $35,000 - $40,000</p>
+      </div>
+      <span class="save-icon" onclick="saveJob('Product Designer')">💾</span>
+    </div>
+    <div class="job-card" data-title="Data Scientist" data-type="Full-Time">
+      <img src="background_image2.jpg" alt="Facebook">
+      <div>
+        <h3>Data Scientist</h3>
+        <p>Facebook</p>
+        <p>Full-Time, London, UK</p>
+        <p>Salary: $50,000 - $55,000</p>
+      </div>
+      <span class="save-icon" onclick="saveJob('Data Scientist')">💾</span>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div>
+      <p>© 2025 SkillHire.com. All rights reserved.</p>
+    </div>
+    <div class="social">
+      <a href="#">LinkedIn</a>
+      <a href="#">Instagram</a>
+      <a href="#">Facebook</a>
+      <a href="#">Twitter</a>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const findJobsNav = document.getElementById("find-jobs-nav");
+      const jobList = document.getElementById("jobs");
+      const searchBar = document.getElementById("search-bar");
+      const searchBtn = document.getElementById("search-btn");
+      const jobCards = document.querySelectorAll(".job-card");
+      const languageSelector = document.getElementById("language-selector");
+      const navLinks = document.querySelectorAll(".nav-links a");
+      const homeNav = document.getElementById("home-nav");
+
+      // Toggle search bar visibility and button when Find Jobs nav is clicked
+      findJobsNav.addEventListener("click", () => {
+        document.body.classList.add("find-jobs-active");
+        jobList.style.display = "flex";
+      });
+
+      // Search functionality
+      searchBtn.addEventListener("click", () => {
+        const query = searchBar.value.toLowerCase();
+        jobCards.forEach(card => {
+          const title = card.dataset.title.toLowerCase();
+          const type = card.dataset.type.toLowerCase();
+          if (title.includes(query) || type.includes(query)) {
+            card.style.display = "flex";
+          } else {
+            card.style.display = "none";
+          }
+        });
+      });
+
+      languageSelector.addEventListener("change", (e) => {
+        alert(`Language changed to: ${e.target.options[e.target.selectedIndex].text}`);
+      });
+
+      // Active link indication
+      navLinks.forEach(link => {
+        link.addEventListener("click", (e) => {
+          navLinks.forEach(link => link.classList.remove("active"));
+          e.target.classList.add("active");
+        });
+      });
+    });
+
+    function saveJob(jobTitle) {
+      alert(`You have saved the job: ${jobTitle}`);
+    }
+  </script>
+</body>
+</html>

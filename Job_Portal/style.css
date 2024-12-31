@@ -1,0 +1,150 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {  
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: url("background_image1.jpg") no-repeat center center fixed;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: rgba(39, 39, 39, 0.6); 
+}
+
+.form-box {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 500px; 
+    padding: 30px; 
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 8px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    color: white;
+}
+
+.form-header h1 {
+    font-size: 32px; 
+    font-weight: 400;
+}
+
+
+.header {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: white;
+}
+
+.header h1 {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.header p {
+  font-size: 15px;
+  font-weight: 200;
+}
+
+
+header {
+    font-size: 28px; 
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.input-box {
+    position: relative;
+    width: 100%;
+    margin-bottom: 25px; 
+}
+
+.input-box i {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ccc;
+    font-size: 18px;
+}
+
+.input-field {
+    width: 100%;
+    padding: 15px 60px; 
+    font-size: 16px; 
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    border-radius: 4px;
+    color: white;
+    outline: none;
+    padding-left: 40px; 
+    padding-right: 30px; 
+}
+
+.input-field:focus {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+::-webkit-input-placeholder {
+    color: #ccc;
+    padding-left: 10px;
+}
+
+.submit {
+    width: 100%;
+    padding: 16px;
+    font-size: 15px; 
+    font-weight: 500;
+    background: rgb(255, 255, 255);
+    color: black;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.submit:hover {
+    background: rgba(255, 255, 255, 0.6);
+}
+
+.bottom {
+    margin-top: 10px;
+    font-size: 16px; 
+    color: #ccc;
+}
+
+.bottom a {
+    text-decoration: none;
+    color: #00bcd4;
+    font-weight: 500;
+}
+
+.bottom a:hover {
+    text-decoration: underline;
+}
+
+
+.bx-show, .bx-hide {
+    position: absolute;
+    right: -200px; 
+    top: 50%;
+    transform: translateY(-100%);
+    font-size: 20px;
+    color: white;
+}
+
+

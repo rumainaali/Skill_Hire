@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <title>Skill Hire | Login</title>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <h1>Skill Hire</h1>
+        <p>"We are clearly different"</p>
+    </div>
+
+    <!-- Form -->
+    <div class="wrapper">
+        <div class="form-box">
+            <div class="login-container">
+                <header>Login</header>
+                <form id="loginForm">
+                    <div class="input-box">
+                        <i class="bx bx-user"></i>
+                        <input type="text" id="username" class="input-field" placeholder="Username or Email">
+                    </div>
+                    <div class="input-box">
+                        <i class="bx bx-lock-alt"></i>
+                        <input type="password" id="password" class="input-field" placeholder="Password">
+                        <i class="bx bx-show" id="togglePassword" style="cursor: pointer;"></i>
+                    </div>
+                    <div class="input-box">
+                        <button type="submit" class="submit">Login</button>
+                    </div>
+                </form>
+                <div class="bottom">
+                    <span>Don't have an account? <a href="signup.html" id="registerLink">Register</a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script -->
+    <script>
+        const loginForm = document.getElementById("loginForm");
+        const username = document.getElementById("username");
+        const password = document.getElementById("password");
+        const togglePassword = document.getElementById("togglePassword");
+
+        // Toggle password visibility
+        togglePassword.addEventListener("click", function () {
+            const type = password.type === "password" ? "text" : "password";
+            password.type = type;
+            this.classList.toggle("bx-show");
+            this.classList.toggle("bx-hide");
+        });
+
+        // Handle login submission
+        loginForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            // Simulate credential validation
+            if (username.value.trim() === "testuser" && password.value.trim() === "testpassword") {
+                alert("Login successful!");
+                localStorage.setItem("username", username.value.trim()); // Store username for the session
+                window.location.href = "dashboard.html"; // Redirect to dashboard
+            } else {
+                alert("Invalid username or password. Please try again.");
+            }
+        });
+    </script>
+</body>
+</html>
